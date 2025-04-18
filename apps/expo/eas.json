@@ -1,0 +1,41 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true,
+        "image": "latest"
+      },
+      "env": {
+        "TAMAGUI_TARGET": "native"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview"
+    },
+    "production": {
+      "channel": "production",
+      "distribution": "store",
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle",
+        "bun": "1.2.4"
+      },
+      "ios": {
+        "bun": "1.2.4"
+      },
+      "env": {
+        "TAMAGUI_TARGET": "native"
+      }
+    }
+  },
+  "cli": {
+    "appVersionSource": "remote",
+    "promptToConfigurePushNotifications": false
+  }
+}

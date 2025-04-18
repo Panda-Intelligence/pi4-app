@@ -1,0 +1,38 @@
+{
+  "name": "@pi4/api",
+  "version": "2.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler dev",
+    "generate": "drizzle-kit generate",
+    "push": "drizzle-kit push",
+    "migrate": "wrangler d1 migrations apply meet-production",
+    "migrate:local": "wrangler d1 migrations apply meet-production --local",
+    "seed": "wrangler d1 execute meet-production --file=./seed/seed.sql",
+    "seed:local": "wrangler d1 execute meet-production --local --file=./seed/seed.sql",
+    "studio": "drizzle-kit studio",
+    "deploy": "wrangler deploy --minify src/worker.ts",
+    "postinstall": "bun generate",
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "dependencies": {
+    "@hono/trpc-server": "^0.3.4",
+    "@neondatabase/serverless": "^0.10.4",
+    "@trpc/server": "^10.45.2",
+    "@tsndr/cloudflare-worker-jwt": "^3.1.4",
+    "drizzle-orm": "^0.40.1",
+    "drizzle-zod": "^0.7.0",
+    "hono": "^4.7.4",
+    "miniflare": "4.20250317.0",
+    "superjson": "2.2.2",
+    "valibot": "^1.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250317.0",
+    "dotenv": "^16.4.7",
+    "drizzle-kit": "^0.30.5",
+    "typescript": "^5.8.3",
+    "wrangler": "4.1.0"
+  }
+}

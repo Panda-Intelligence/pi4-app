@@ -1,0 +1,31 @@
+{
+  "name": "@pi4/ui",
+  "version": "2.0.0",
+  "sideEffects": ["*.css"],
+  "private": true,
+  "main": "src/index.tsx",
+  "module:jsx": "src",
+  "files": ["types", "dist"],
+  "scripts": {
+    "build": "tamagui-build",
+    "watch": "tamagui-build --watch",
+    "clean": "rm -rf dist types node_modules .turbo"
+  },
+  "dependencies": {
+    "@shopify/flash-list": "^1.6.3",
+    "@pi4/api": "workspace:*",
+    "@tamagui/animations-react-native": "1.125.26",
+    "@tamagui/config": "^1.125.26",
+    "@tamagui/font-inter": "1.125.26",
+    "@tamagui/react-native-media-driver": "1.125.26",
+    "@tamagui/shorthands": "1.125.26",
+    "@tamagui/themes": "1.125.26",
+    "@tamagui/toast": "1.125.26",
+    "@tanstack/react-virtual": "3.13.4",
+    "jotai": "^2.12.2",
+    "tamagui": "1.125.26"
+  },
+  "devDependencies": {
+    "@tamagui/build": "1.125.26"
+  }
+}

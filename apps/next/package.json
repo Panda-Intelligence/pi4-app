@@ -1,0 +1,43 @@
+{
+  "name": "next-app",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "local-build": "TAMAGUI_TARGET=web bun x @cloudflare/next-on-pages --disable-worker-minification",
+    "local-serve": "bun x wrangler pages dev .vercel/output/static --port 3000 --compatibility-date 2023-10-30 --compatibility-flag=nodejs_compat",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "git clean -xdf .next node_modules .tamagui",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9",
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/auth-helpers-react": "^0.5.0",
+    "@pi4/ui": "workspace:*",
+    "@tamagui/next-theme": "1.125.26",
+    "@tsndr/cloudflare-worker-jwt": "^3.1.4",
+    "app": "workspace:*",
+    "million": "^3.1.11",
+    "next": "14.2.26",
+    "next-seo": "^6.6.0",
+    "next-superjson-plugin": "^0.6.3",
+    "pattycake": "^0.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-native": "0.76.9",
+    "react-native-svg-web": "^1.0.9",
+    "webpack": "^5.98.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.10",
+    "@tamagui/next-plugin": "1.125.26",
+    "@types/react": "^18.3.18",
+    "vercel": "41.4.1",
+    "wrangler": "4.1.0"
+  }
+}

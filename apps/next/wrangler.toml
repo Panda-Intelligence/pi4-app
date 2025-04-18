@@ -1,0 +1,9 @@
+name = "meet"
+compatibility_date = "2023-10-30"
+send_metrics = false
+route = "meet.pandacat.ai/*"
+workers_dev = false
+
+[env.preview]
+name = "meet-preview"
+workers_dev = true

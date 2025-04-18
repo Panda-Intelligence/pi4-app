@@ -1,0 +1,26 @@
+name = "meet-api"
+compatibility_date = "2023-10-30"
+send_metrics = false
+main = "src/worker.ts"
+account_id = "ecc1e776355e6cac22906ab9d5d8b86a"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "meet-production"
+database_id = "78efa25a-000b-46f9-b3aa-1bd38a58cf40"
+migrations_dir = "migrations"
+
+# The necessary secrets are:
+# - APP_URL - for preventing CORS errors
+# - JWT_VERIFICATION_KEY - for Supabase @link https://supabase.com
+#
+# For local development, you can create a file called .dev.vars and use dotenv syntax.
+#
+# For deployed environments, you can use wrangler secrets to set these values.
+# For example:
+# Run `echo <VALUE> | wrangler secret put <NAME>` for each of these
+# Or use the Cloudflare web interface.
+# @link https://developers.cloudflare.com/workers/platform/environment-variables/#environment-variables-via-the-dashboard
+#
+[observability.logs]
+enabled = true
