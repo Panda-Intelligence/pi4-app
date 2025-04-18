@@ -1,14 +1,14 @@
-name: 'Next.js Deployment'
+name: "Next.js Deployment"
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'apps/next/**'
-      - 'packages/ui/**'
-      - 'packages/app/**'
+      - "apps/next/**"
+      - "packages/ui/**"
+      - "packages/app/**"
 
 jobs:
   publish:
@@ -25,12 +25,12 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: 'Bun setup'
+      - name: "Bun setup"
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
 
-      - name: 'Bun install'
+      - name: "Bun install"
         run: bun install
 
       - name: Build
@@ -51,7 +51,7 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           projectName: ${{ secrets.CF_PROJECT_NAME }}
           directory: .vercel/output/static
-          branch: master
+          branch: main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           workingDirectory: apps/next
           wranglerVersion: 4

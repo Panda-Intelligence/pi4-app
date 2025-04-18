@@ -1,12 +1,12 @@
-name: 'Backend Deployment'
+name: "Backend Deployment"
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'packages/api/**'
+      - "packages/api/**"
 
 jobs:
   deploy:
@@ -20,12 +20,12 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: 'Bun setup'
+      - name: "Bun setup"
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
 
-      - name: 'Bun install'
+      - name: "Bun install"
         run: bun install
 
       - name: Migrate database

@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
     paths:
-      - 'apps/expo/**'
-      - 'packages/ui/**'
-      - 'packages/app/**'
+      - "apps/expo/**"
+      - "packages/ui/**"
+      - "packages/app/**"
 
 permissions:
   contents: write
@@ -26,12 +26,12 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: 'Bun setup'
+      - name: "Bun setup"
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
 
-      - name: 'Bun install'
+      - name: "Bun install"
         run: bun install
 
       - name: Setup EAS
