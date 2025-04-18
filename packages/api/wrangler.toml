@@ -1,13 +1,13 @@
-name = "meet-api"
-compatibility_date = "2023-10-30"
+name = "pi4-app-api"
+compatibility_date = "2025-04-18"
 send_metrics = false
 main = "src/worker.ts"
 account_id = "ecc1e776355e6cac22906ab9d5d8b86a"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "meet-production"
-database_id = "78efa25a-000b-46f9-b3aa-1bd38a58cf40"
+database_name = "pi4-app-prod"
+database_id = "0c019aa8-b00e-4c32-b54d-132541eabe40"
 migrations_dir = "migrations"
 
 # The necessary secrets are:
